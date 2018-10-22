@@ -1,5 +1,6 @@
 const btnStartScanning = document.querySelector('[data-start-scanning]')
 const btnStopScanning = document.querySelector('[data-stop-scanning]')
+let logDevices = document.querySelector('[data-devices]')
 let foundDevices = []
 let hasPermission = false
 let isLocationEnabled = false
@@ -12,6 +13,8 @@ function initialize() {
 
 function onDeviceReady() {
 	initializeBluetoothLe()
+	const set1 = new Set([1, 2, 3, 4, 5])
+	console.log('typeof set1', typeof set1, set1.has(1))
 }
 
 function initializeBluetoothLe() {
@@ -93,8 +96,9 @@ function startScanSuccess(value) {
 	bluetoothle.hasPermission(hasPermissionSuccess)
 	bluetoothle.isLocationEnabled(isLocationEnabledSuccess, handleError)
 
-	if (value.status === 'scanResult' && hasPermission) {
+	if (value.status === 'scanResult' && hasPermission && isLocationEnabled) {
 		console.log('FOUND DEVICE', value)
+		logDevices.textContent += `${value.address} \n\n`
 	}
 }
 
