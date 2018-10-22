@@ -7,10 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-bluetoothle": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-bluetoothle": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
