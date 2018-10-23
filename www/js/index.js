@@ -4,6 +4,7 @@ let logDevices = document.querySelector('[data-devices]')
 let foundDevices = []
 let hasPermission = false
 let isLocationEnabled = false
+let scanInterval
 
 function initialize() {
 	document.addEventListener('deviceready', onDeviceReady, false)
@@ -13,13 +14,10 @@ function initialize() {
 
 function onDeviceReady() {
 	initializeBluetoothLe()
-	const set1 = new Set([1, 2, 3, 4, 5])
-	console.log('typeof set1', typeof set1, set1.has(1))
 }
 
 function initializeBluetoothLe() {
 	new Promise(function (resolve) {
-		console.log('resolve', resolve)
 		bluetoothle.initialize(resolve, {
 			'request': true,
 			'statusReceiver': true,
@@ -35,6 +33,7 @@ function initializeSuccess(value) {
 	}
 	else {
 		console.log('Bluetooth is not enabled', value)
+		// @todo: request enable bluetooth
 	}
 }
 
@@ -42,11 +41,15 @@ function handleError(error) {
 	console.log('error', error)
 }
 
-/*
- * Scan for unpaired devices
- */
-function scan() {
-	bluetoothle.startScan(startScanSuccess, startScanError)
+function scan(stopped) {
+	console.log('stopped', stopped)
+	if (stopped) {
+		console.log('Should stop interval', scanInterval)
+		window.clearInterval(scanInterval)
+	}
+	else {
+		bluetoothle.startScan(startScanSuccess, startScanError)
+	}
 }
 
 function requestPermissionSuccess(value) {
@@ -63,8 +66,9 @@ function hasPermissionSuccess(value) {
 }
 
 function handleStartScan() {
+	// @todo: request bluetooth enable (show prompt)
 	console.log('Start scanning')
-	scan()
+	scanInterval = window.setInterval(scan, 5000, true)
 }
 
 function handleStopScan(event) {
@@ -92,6 +96,7 @@ function requestLocationSuccess(value) {
 
 function startScanSuccess(value) {
 	console.log('startScanSuccess', value)
+	foundDevices = []
 
 	bluetoothle.hasPermission(hasPermissionSuccess)
 	bluetoothle.isLocationEnabled(isLocationEnabledSuccess, handleError)
@@ -99,6 +104,7 @@ function startScanSuccess(value) {
 	if (value.status === 'scanResult' && hasPermission && isLocationEnabled) {
 		console.log('FOUND DEVICE', value)
 		logDevices.textContent += `${value.address} \n\n`
+
 	}
 }
 
@@ -112,10 +118,6 @@ function stopScanSuccess(value) {
 
 function stopScanError(value) {
 
-}
-
-function getAdapterCb(value) {
-	console.log(value)
 }
 
 initialize()
