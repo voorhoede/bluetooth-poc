@@ -6,8 +6,8 @@ npm-debug.log
 .DS_Store
 
 # Cordova
-/platforms
-/plugins
+platforms
+plugins
 
 # res
 resources/signing
