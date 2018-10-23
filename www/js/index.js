@@ -68,7 +68,8 @@ function hasPermissionSuccess(value) {
 function handleStartScan() {
 	// @todo: request bluetooth enable (show prompt)
 	console.log('Start scanning')
-	scanInterval = window.setInterval(scan, 5000, true)
+	// scanInterval = window.setInterval(scan, 5000, true)
+	scan()
 }
 
 function handleStopScan(event) {
