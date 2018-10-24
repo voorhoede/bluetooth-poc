@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<title>Hello World</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Battery State</title>
 </head>
-
 <body>
-	<div class="app">
-		<h1>Apache Cordova</h1>
-		<textarea data-devices class="textarea"></textarea>
-		<button class="button" data-start-scanning>Start scanning</button>
-		<button class="button" data-stop-scanning>Stop scanning</button>
-	</div>
-	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+    <div class="app">
+        <p>Choose a peripheral with a battery service</p>
+        <div id="mainPage">
+            <ul id="deviceList">
+            </ul>
+            <button id="refreshButton">Refresh</button>
+        </div>
+        <div id="detailPage">
+            <div id="batteryState"></div>
+            <button id="batteryStateButton">Read Battery State</button>
+            <button id="disconnectButton">Disconnect</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
-
 </html>
