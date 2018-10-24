@@ -1,124 +1,85 @@
-const btnStartScanning = document.querySelector('[data-start-scanning]')
-const btnStopScanning = document.querySelector('[data-stop-scanning]')
-let logDevices = document.querySelector('[data-devices]')
-let foundDevices = []
-let hasPermission = false
-let isLocationEnabled = false
-let scanInterval
+'use strict';
 
-function initialize() {
-	document.addEventListener('deviceready', onDeviceReady, false)
-	btnStartScanning.addEventListener('click', handleStartScan)
-	btnStopScanning.addEventListener('click', handleStopScan)
-}
+var battery = {
+    service: "180F",
+    level: "2A19"
+};
 
-function onDeviceReady() {
-	initializeBluetoothLe()
-}
+var app = {
+    initialize: function() {
+        this.bindEvents();
+        detailPage.hidden = true;
+    },
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+        refreshButton.addEventListener('touchstart', this.refreshDeviceList, false);
+        batteryStateButton.addEventListener('touchstart', this.readBatteryState, false);
+        disconnectButton.addEventListener('touchstart', this.disconnect, false);
+        button.addEventListener('touchstart', this.connect, false);
+    },
+    onDeviceReady: function() {
+        app.refreshDeviceList();
+    },
+    refreshDeviceList: function() {
+        deviceList.innerHTML = ''; // empties the list
+        // scan for all devices
+        ble.scan([], 5, app.onDiscoverDevice, app.onError);
+    },
+    onDiscoverDevice: function(device) {
+        console.log('New device: ', JSON.stringify(device));
 
-function initializeBluetoothLe() {
-	new Promise(function (resolve) {
-		bluetoothle.initialize(resolve, {
-			'request': true,
-			'statusReceiver': true,
-			'restoreKey': 'bluetoothleplugin',
-		})
-	}).then(initializeSuccess, handleError)
-}
+        if (typeof device.name === 'string') {
+            var listItem = document.createElement('li');
+            var button = document.createElement('button');
+            button.id = device.id;
+            button.innerHtml = device.name + '<br/>' +
+                    'RSSI: ' + device.rssi + '&nbsp;|&nbsp;' +
+                    device.id;
 
-function initializeSuccess(value) {
-	console.log(value)
-	if (value.status === 'enabled') {
-		console.log('Bluetooth is enabled')
-	}
-	else {
-		console.log('Bluetooth is not enabled', value)
-		// @todo: request enable bluetooth
-	}
-}
+            listItem.dataset.deviceId = device.id;  // TODO
+            listItem.appendChild(button);
+            deviceList.appendChild(listItem);
+        }
+    },
+    connect: function(e) {
+        var deviceId = e.target.dataset.deviceId,
+            onConnect = function() {
+                ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
+                batteryStateButton.dataset.deviceId = deviceId;
+                disconnectButton.dataset.deviceId = deviceId;
+                app.showDetailPage();
+            };
 
-function handleError(error) {
-	console.log('error', error)
-}
-
-function scan(stopped) {
-	console.log('stopped', stopped)
-	if (stopped) {
-		console.log('Should stop interval', scanInterval)
-		window.clearInterval(scanInterval)
-	}
-	else {
-		bluetoothle.startScan(startScanSuccess, startScanError)
-	}
-}
-
-function requestPermissionSuccess(value) {
-	return value.requestPermission
-}
-
-function hasPermissionSuccess(value) {
-	if (value.hasPermission) {
-		hasPermission = true
-	}
-	else {
-		console.log('No permission. Request permission!')
-	}
-}
-
-function handleStartScan() {
-	// @todo: request bluetooth enable (show prompt)
-	console.log('Start scanning')
-	// scanInterval = window.setInterval(scan, 5000, true)
-	scan()
-}
-
-function handleStopScan(event) {
-	console.log('Stop scanning')
-	bluetoothle.stopScan(stopScanSuccess, stopScanError)
-}
-
-function isLocationEnabledSuccess(value) {
-	console.log(value)
-	if (value.isLocationEnabled) {
-		isLocationEnabled = true
-	}
-	else {
-		console.log('No location enabled. Request location!')
-		bluetoothle.requestLocation(requestLocationSuccess, handleError)
-	}
-}
-
-function requestLocationSuccess(value) {
-	console.log(value)
-	if (value.requestLocation) {
-		isLocationEnabled = true
-	}
-}
-
-function startScanSuccess(value) {
-	console.log('startScanSuccess', value)
-	foundDevices = []
-
-	bluetoothle.hasPermission(hasPermissionSuccess)
-	bluetoothle.isLocationEnabled(isLocationEnabledSuccess, handleError)
-
-	if (value.status === 'scanResult' && hasPermission && isLocationEnabled) {
-		console.log('FOUND DEVICE', value)
-		logDevices.textContent += `${value.address} \n\n`
-
-	}
-}
-
-function startScanError(value) {
-
-}
-
-function stopScanSuccess(value) {
-
-}
-
-function stopScanError(value) {
-
-}
-
-initialize()
+        ble.connect(deviceId, onConnect, app.onError);
+    },
+    onBatteryLevelChange: function(data) {
+        console.log('onBatteryLevelChange', data);
+        var batteryLevel = new Uint8Array(data);
+        batteryState.innerHTML = batteryLevel[0];
+    },
+    readBatteryState: function(event) {
+        console.log('readBatteryState');
+        var deviceId = event.target.dataset.deviceId;
+        ble.read(deviceId, battery.service, battery.level, app.onReadBatteryLevel, app.onError);
+    },
+    onReadBatteryLevel: function(data) {
+        console.log('onReadBatteryLevel', data);
+        var batteryLevel = new Uint8Array(data);
+        batteryState.innerHTML = batteryLevel[0];
+    },
+    disconnect: function(event) {
+        var deviceId = event.target.dataset.deviceId;
+        ble.disconnect(deviceId, app.showMainPage, app.onError);
+    },
+    showMainPage: function() {
+        mainPage.hidden = false;
+        detailPage.hidden = true;
+    },
+    showDetailPage: function() {
+        mainPage.hidden = true;
+        detailPage.hidden = false;
+    },
+    onError: function(reason) {
+        alert('ERROR: ' + JSON.stringify(reason, 0, 4)); // real apps should use notification.alert
+    }
+};
