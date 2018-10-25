@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Battery State</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>Battery State</title>
 </head>
+
 <body>
-    <div class="app">
-        <p>Choose a peripheral with a battery service</p>
-        <div id="mainPage">
-            <ul id="deviceList">
-            </ul>
-            <button id="refreshButton">Refresh</button>
-        </div>
-        <div id="detailPage">
-            <div id="batteryState"></div>
-            <button id="batteryStateButton">Read Battery State</button>
-            <button id="disconnectButton">Disconnect</button>
-        </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+	<div class="app">
+		<h1>List of bluetooth devices</h1>
+		<div id="mainPage">
+			<button id="refreshButton">Refresh</button>
+			<ul data-device-list class="device-list"></ul>
+		</div>
+		<div id="detailPage">
+			<div id="batteryState"></div>
+			<button id="batteryStateButton">Read Battery State</button>
+			<button id="disconnectButton">Disconnect</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>

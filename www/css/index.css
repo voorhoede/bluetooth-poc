@@ -61,3 +61,18 @@ button {
     font-size: 1.5em;
     border-radius: 0;
 }
+
+.device-list__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.device-list__status {
+	width: 100%;
+	margin: 15px;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: right;
+}
