@@ -15,7 +15,7 @@ var app = {
         refreshButton.addEventListener('click', this.refreshDeviceList, false);
         batteryStateButton.addEventListener('click', this.readBatteryState, false);
         disconnectButton.addEventListener('click', this.disconnect, false);
-        button.addEventListener('click', this.connect, false);
+        deviceList.addEventListener('touchstart', this.connect, false);
     },
     onDeviceReady: function() {
         app.refreshDeviceList();
@@ -29,15 +29,13 @@ var app = {
         console.log('New device: ', JSON.stringify(device));
 
         if (typeof device.name === 'string') {
-            var listItem = document.createElement('li');
-            var button = document.createElement('button');
-            button.id = device.id;
-            button.innerHtml = device.name + '<br/>' +
-                    'RSSI: ' + device.rssi + '&nbsp;|&nbsp;' +
-                    device.id;
+            var listItem = document.createElement('li'),
+            html = '<b>' + device.name + '</b><br/>' +
+                'RSSI: ' + device.rssi + '&nbsp;|&nbsp;' +
+                device.id;
 
             listItem.dataset.deviceId = device.id;  // TODO
-            listItem.appendChild(button);
+            listItem.innerHTML = html;
             deviceList.appendChild(listItem);
         }
     },
