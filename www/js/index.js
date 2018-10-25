@@ -5,6 +5,14 @@ var battery = {
     level: "2A19"
 };
 
+var mainPage = document.getElementById('main-page');
+var detailPage = document.getElementById('detail-page');
+var deviceList = document.getElementById('device-list');
+var refreshButton = document.getElementById('refresh-button');
+var batteryState = document.getElementById('battery-state');
+var batteryStateButton = document.getElementById('battery-state-button');
+var disconnectButton = document.getElementById('disconnect-button');
+
 var app = {
     initialize: function() {
         this.bindEvents();
@@ -15,40 +23,39 @@ var app = {
         refreshButton.addEventListener('click', this.refreshDeviceList, false);
         batteryStateButton.addEventListener('click', this.readBatteryState, false);
         disconnectButton.addEventListener('click', this.disconnect, false);
-        deviceList.addEventListener('touchstart', this.connect, false);
+        deviceList.addEventListener('click', this.connect, false);
     },
     onDeviceReady: function() {
         app.refreshDeviceList();
     },
     refreshDeviceList: function() {
-        deviceList.innerHTML = ''; // empties the list
-        // scan for all devices
+        deviceList.innerHTML = '';
         ble.scan([], 5, app.onDiscoverDevice, app.onError);
     },
     onDiscoverDevice: function(device) {
-        console.log('New device: ', JSON.stringify(device));
-
         if (typeof device.name === 'string') {
-            var listItem = document.createElement('li'),
-            html = '<b>' + device.name + '</b><br/>' +
-                'RSSI: ' + device.rssi + '&nbsp;|&nbsp;' +
-                device.id;
+            var listItem = document.createElement('li');
+            var html = `
+                <span>${device.name}</span>
+                <button class="btn btn-blue" data-device-id="${device.id}">Connect</button>
+            `;
 
-            listItem.dataset.deviceId = device.id;  // TODO
+            listItem.classList.add('list-item');
             listItem.innerHTML = html;
             deviceList.appendChild(listItem);
         }
     },
     connect: function(e) {
-        var deviceId = e.target.dataset.deviceId,
-            onConnect = function() {
+        if (e.target.classList.contains('btn-blue')) {
+            var deviceId = e.target.dataset.deviceId;
+            var onConnect = function() {
                 ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
                 batteryStateButton.dataset.deviceId = deviceId;
                 disconnectButton.dataset.deviceId = deviceId;
                 app.showDetailPage();
             };
-
-        ble.connect(deviceId, onConnect, app.onError);
+            ble.connect(deviceId, onConnect, app.onError);
+        }
     },
     onBatteryLevelChange: function(data) {
         console.log('onBatteryLevelChange', data);
