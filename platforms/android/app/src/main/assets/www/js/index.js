@@ -51,30 +51,18 @@ function stopScan(event) {
 
 function startScanSuccess(value) {
 	logScan.textContent = JSON.stringify(value, null, 4)
-	// if (value.status === 'scanStarted') {
-	// 	logScan.textContent = `Scan has started...`
-	// } else if (value.status === 'scanResult') {
-	// 	logScan.textContent = `Device has been found.`
-	// }
 }
 
 function startScanError(value) {
 	logScan.textContent = JSON.stringify(value, null, 4)
-	// if (value.status !== 'scanStarted') {
-	// 	logScan.textContent = `Scan could not start. ${value}`
-	// }
 }
 
 function stopScanSuccess(value) {
-	if (value.status === 'scanStopped') {
-		logScan.textContent = `Scan has stopped.`
-	}
+	logScan.textContent = JSON.stringify(value, null, 4)
 }
 
 function stopScanError(value) {
-	if (value.status !== 'scanStopped') {
-		logScan.textContent = `OOps, could not stop scan.`
-	}
+	logScan.textContent = JSON.stringify(value, null, 4)
 }
 
 function getAdapterCb(value) {
