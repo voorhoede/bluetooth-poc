@@ -14,7 +14,6 @@ body {
 
 h1 {
     text-align: center;
-    border-bottom: 1px solid #ccc;
     padding-bottom: 24px;
 }
 
@@ -161,6 +160,6 @@ h1 {
 #device-list li {
     display: flex;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 16px;
     border-top: 1px solid #ccc;
 }

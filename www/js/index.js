@@ -24,39 +24,67 @@ var app = {
 		refreshButton.addEventListener('click', this.refreshDeviceList, false);
 		batteryStateButton.addEventListener('click', this.readBatteryState, false);
 		disconnectButton.addEventListener('click', this.disconnect, false);
-		deviceList.addEventListener('click', this.connect, false);
+		// deviceList.addEventListener('click', this.connect, false);
 	},
 	onDeviceReady: function () {
 		app.refreshDeviceList();
 	},
 	refreshDeviceList: function () {
 		deviceList.innerHTML = '';
-		ble.scan([], 5, app.onDiscoverDevice, app.onError);
+		// ble.scan([], 5, app.onDiscoverDevice, app.onError);
+		evothings.ble.startScan(app.onDiscoverDevice, app.onError);
+		window.setTimeout(app.stopScan, 5000);
 	},
 	onDiscoverDevice: function (device) {
 		if (typeof device.name === 'string') {
 			var listItem = document.createElement('li');
 			var html = `
-                <span>${device.name}</span>
-                <button class="btn btn-blue" data-device-id="${device.id}">Connect</button>
-            `;
+				<span>${device.name}</span>
+				<button class="btn btn-blue" onclick=app.connect(${JSON.stringify(device)})>Connect</button>
+      `
 
 			listItem.classList.add('list-item');
 			listItem.innerHTML = html;
 			deviceList.appendChild(listItem);
 		}
 	},
-	connect: function (e) {
-		if (e.target.classList.contains('btn-blue')) {
-			var deviceId = e.target.dataset.deviceId;
-			var onConnect = function () {
-				ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
-				batteryStateButton.dataset.deviceId = deviceId;
-				disconnectButton.dataset.deviceId = deviceId;
-				app.showDetailPage();
-			};
-			ble.connect(deviceId, onConnect, app.onError);
+	stopScan: function () {
+		evothings.ble.stopScan()
+	},
+	connect: function (device) {
+		console.log(device)
+		var deviceId = device.address
+		// var onConnect = function () {
+		// 	ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
+		// 	batteryStateButton.dataset.deviceId = deviceId;
+		// 	disconnectButton.dataset.deviceId = deviceId;
+		// 	app.showDetailPage();
+		// };
+		evothings.ble.connectToDevice(device, app.onConnected, app.onDisconnected, app.onError)
+		// ble.connect(deviceId, onConnect, app.onError);
+	},
+	onConnected: function (device) {
+		if (device.services && device.services.length) {
+			alert(`Connected to ${device.name.trim()}! \nThere are ${device.services.length} services available.`)
+
+			let service = evothings.ble.getService(device, device.services[4].uuid)
+			console.log('service', service)
+			console.log('characteristics', service.characteristics)
+			let characteristic = evothings.ble.getCharacteristic(service, service.characteristics[1].uuid)
+
+			evothings.ble.readCharacteristic(
+				device,
+				characteristic,
+				function (data) {
+					console.log('characteristic data: ', data, evothings.ble.fromUtf8(data))
+				},
+				app.onError
+			)
 		}
+	},
+	onDisconnected: function (device) {
+		console.log('Disconnected to ', device.name)
+		evothings.ble.getService(device, device.address)
 	},
 	onBatteryLevelChange: function (data) {
 		console.log('onBatteryLevelChange', data);
@@ -86,7 +114,7 @@ var app = {
 		detailPage.hidden = false;
 	},
 	onError: function (reason) {
-		alert('ERROR: ' + JSON.stringify(reason, 0, 4)); // real apps should use notification.alert
+		alert('ERROR: ' + JSON.stringify(reason, null, 4)); // real apps should use notification.alert
 	}
 };
 
