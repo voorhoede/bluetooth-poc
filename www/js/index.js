@@ -6,17 +6,15 @@ const battery = {
 	level: '2A19'
 }
 
-// https://www.bluetooth.com/specifications/assigned-numbers/environmental-sensing-service-characteristics
-const environment = {
-	service: '181A',
-	level: {
-		temperature: '2A6E'
-	}
-}
+var mainPage = document.getElementById('main-page');
+var detailPage = document.getElementById('detail-page');
+var deviceList = document.getElementById('device-list');
+var refreshButton = document.getElementById('refresh-button');
+var batteryState = document.getElementById('battery-state');
+var batteryStateButton = document.getElementById('battery-state-button');
+var disconnectButton = document.getElementById('disconnect-button');
 
-const deviceList = document.querySelector('[data-device-list]')
-
-const app = {
+var app = {
 	initialize: function () {
 		this.bindEvents();
 		detailPage.hidden = true;
@@ -26,80 +24,70 @@ const app = {
 		refreshButton.addEventListener('click', this.refreshDeviceList, false);
 		batteryStateButton.addEventListener('click', this.readBatteryState, false);
 		disconnectButton.addEventListener('click', this.disconnect, false);
-		deviceList.addEventListener('click', this.connect, false)
+		deviceList.addEventListener('click', this.connect, false);
 	},
 	onDeviceReady: function () {
 		app.refreshDeviceList();
 	},
 	refreshDeviceList: function () {
-		deviceList.innerHTML = ''; // empties the list
-		// scan for all devices
-		ble.scan([], 5, app.onDiscoverDevice, app.onError)
+		deviceList.innerHTML = '';
+		ble.scan([], 5, app.onDiscoverDevice, app.onError);
 	},
 	onDiscoverDevice: function (device) {
-		console.log('New device: ', JSON.stringify(device))
-		if (device.name) {
-			deviceList.innerHTML += `
-				<li class="device-list__item">
-					<h2>${device.name}</h2>
-					<button data-button data-id="${device.id}">Connect</button>
-					<span data-device-status class="device-list__status"></span>
-				</li>
-			`
+		if (typeof device.name === 'string') {
+			var listItem = document.createElement('li');
+			var html = `
+                <span>${device.name}</span>
+                <button class="btn btn-blue" data-device-id="${device.id}">Connect</button>
+            `;
+
+			listItem.classList.add('list-item');
+			listItem.innerHTML = html;
+			deviceList.appendChild(listItem);
 		}
 	},
 	connect: function (e) {
-		console.log('in connect')
-		const target = e.target
-		if (target.tagName !== 'BUTTON') {
-			return
+		if (e.target.classList.contains('btn-blue')) {
+			var deviceId = e.target.dataset.deviceId;
+			var onConnect = function () {
+				ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
+				batteryStateButton.dataset.deviceId = deviceId;
+				disconnectButton.dataset.deviceId = deviceId;
+				app.showDetailPage();
+			};
+			ble.connect(deviceId, onConnect, app.onError);
 		}
-
-		const statusText = target.nextElementSibling
-		statusText.textContent = 'Connecting...'
-		const deviceId = e.target.getAttribute('data-id')
-		const onConnect = function () {
-			statusText.textContent = 'Connected'
-			ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError)
-			batteryStateButton.dataset.deviceId = deviceId
-			disconnectButton.dataset.deviceId = deviceId
-			//app.showDetailPage();
-		}
-
-		ble.connect(deviceId, onConnect, app.onError)
 	},
 	onBatteryLevelChange: function (data) {
-		console.log('onBatteryLevelChange', data)
-		var batteryLevel = new Uint8Array(data)
-		batteryState.innerHTML = batteryLevel[0]
+		console.log('onBatteryLevelChange', data);
+		var batteryLevel = new Uint8Array(data);
+		batteryState.innerHTML = batteryLevel[0];
 	},
 	readBatteryState: function (event) {
-		console.log('readBatteryState')
-		var deviceId = event.target.dataset.deviceId
-		ble.read(deviceId, battery.service, battery.level, app.onReadBatteryLevel, app.onError)
+		console.log('readBatteryState');
+		var deviceId = event.target.dataset.deviceId;
+		ble.read(deviceId, battery.service, battery.level, app.onReadBatteryLevel, app.onError);
 	},
 	onReadBatteryLevel: function (data) {
-		console.log('onReadBatteryLevel', data)
-		var batteryLevel = new Uint8Array(data)
-		batteryState.innerHTML = batteryLevel[0]
+		console.log('onReadBatteryLevel', data);
+		var batteryLevel = new Uint8Array(data);
+		batteryState.innerHTML = batteryLevel[0];
 	},
 	disconnect: function (event) {
-		var deviceId = event.target.dataset.deviceId
-		ble.disconnect(deviceId, app.showMainPage, app.onError)
+		var deviceId = event.target.dataset.deviceId;
+		ble.disconnect(deviceId, app.showMainPage, app.onError);
 	},
 	showMainPage: function () {
-		mainPage.hidden = false
-		detailPage.hidden = true
+		mainPage.hidden = false;
+		detailPage.hidden = true;
 	},
 	showDetailPage: function () {
-		mainPage.hidden = true
-		detailPage.hidden = false
+		mainPage.hidden = true;
+		detailPage.hidden = false;
 	},
-	onError: function (value) {
-		const button = document.querySelector(`button[data-id="${value.id}"]`)
-		const statusText = button.nextElementSibling
-		statusText.textContent = `Error: ${value.errorMessage}`
+	onError: function (reason) {
+		alert('ERROR: ' + JSON.stringify(reason, 0, 4)); // real apps should use notification.alert
 	}
-}
+};
 
 app.initialize()
