@@ -160,7 +160,17 @@ h1 {
 
 #device-list li {
     display: flex;
-    justify-content: space-between;
-    padding: 8px 16px;
+		justify-content: space-between;
+		align-items: center;
+    padding: 16px;
     border-top: 1px solid #ccc;
+}
+
+#device-list li:first-child {
+    border-top: 0;
+}
+
+.state {
+	font-size: 60px;
+	font-weight: bold;
 }
