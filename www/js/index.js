@@ -1,19 +1,19 @@
 'use strict';
 
-var battery = {
+const battery = {
 	service: "180F",
 	level: "2A19"
 };
 
-var mainPage = document.getElementById('main-page');
-var detailPage = document.getElementById('detail-page');
-var deviceList = document.getElementById('device-list');
-var refreshButton = document.getElementById('refresh-button');
-var batteryState = document.getElementById('battery-state');
-var batteryStateButton = document.getElementById('battery-state-button');
-var disconnectButton = document.getElementById('disconnect-button');
+const mainPage = document.getElementById('main-page');
+const detailPage = document.getElementById('detail-page');
+const deviceList = document.getElementById('device-list');
+const refreshButton = document.getElementById('refresh-button');
+const batteryState = document.getElementById('battery-state');
+const batteryStateButton = document.getElementById('battery-state-button');
+const disconnectButton = document.getElementById('disconnect-button');
 
-var app = {
+const app = {
 	initialize: function () {
 		this.bindEvents();
 		detailPage.hidden = true;
@@ -34,21 +34,19 @@ var app = {
 	},
 	onDiscoverDevice: function (device) {
 		if (typeof device.name === 'string') {
-			var listItem = document.createElement('li');
-			var html = `
-                <span>${device.name}</span>
-                <button class="btn btn-blue" data-device-id="${device.id}">Connect</button>
-            `;
-
+			const listItem = document.createElement('li');
 			listItem.classList.add('list-item');
-			listItem.innerHTML = html;
+			listItem.innerHTML = `
+				<span>${device.name}</span>
+				<button class="btn btn-blue" data-device-id="${device.id}">Connect</button>
+      `;
 			deviceList.appendChild(listItem);
 		}
 	},
 	connect: function (e) {
 		if (e.target.classList.contains('btn-blue')) {
-			var deviceId = e.target.dataset.deviceId;
-			var onConnect = function () {
+			const deviceId = e.target.dataset.deviceId;
+			const onConnect = function () {
 				ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
 				batteryStateButton.dataset.deviceId = deviceId;
 				disconnectButton.dataset.deviceId = deviceId;
@@ -59,21 +57,21 @@ var app = {
 	},
 	onBatteryLevelChange: function (data) {
 		console.log('onBatteryLevelChange', data);
-		var batteryLevel = new Uint8Array(data);
+		const batteryLevel = new Uint8Array(data);
 		batteryState.innerHTML = batteryLevel[0];
 	},
 	readBatteryState: function (event) {
 		console.log('readBatteryState');
-		var deviceId = event.target.dataset.deviceId;
+		const deviceId = event.target.dataset.deviceId;
 		ble.read(deviceId, battery.service, battery.level, app.onReadBatteryLevel, app.onError);
 	},
 	onReadBatteryLevel: function (data) {
 		console.log('onReadBatteryLevel', data);
-		var batteryLevel = new Uint8Array(data);
+		const batteryLevel = new Uint8Array(data);
 		batteryState.innerHTML = batteryLevel[0];
 	},
 	disconnect: function (event) {
-		var deviceId = event.target.dataset.deviceId;
+		const deviceId = event.target.dataset.deviceId;
 		ble.disconnect(deviceId, app.showMainPage, app.onError);
 	},
 	showMainPage: function () {
