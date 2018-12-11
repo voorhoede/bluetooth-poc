@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b763f6274abd9002ebf6f6e7108345ad/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/petergoes/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5020b97a74c7adee8c0e157e5746860e/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

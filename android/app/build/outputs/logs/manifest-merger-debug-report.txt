@@ -1,0 +1,200 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5020b97a74c7adee8c0e157e5746860e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5e91adbfec1bf6f559cc421cc4772808/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/f8483f664f4dc22d5a056ba104efebb1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c248018a0a33ed41cc24fc8a3b5a1d30/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/17cd853d51843345b3292796306e1bd6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0db813aeb8599a4125347a7bc87b0877/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b763f6274abd9002ebf6f6e7108345ad/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/09561ffa821b0e5feab1243fa812af4b/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2034abf50f292235827d68d6ee08c608/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/bcc7a421e0280fa8b0024299e6796572/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/0f68b34f89b7fe9fff6b7b604b892348/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/30e5c0ba45cda5a48815bedc9ca08bc4/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/3111cf687597118f4675fb313f4eaf65/AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r174650] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/a346ce87ecfad71a5846e1eb70c8655b/AndroidManifest.xml:1:1-3:12
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.3.0.aar/eb652b30616d9026817d73ec73d310c7/AndroidManifest.xml:2:1-10:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f11d78d07107473c1c37a12540a87df4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/0eaf32347bc0980b3cd74d75b9e0e517/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/c0a8cc9f769282ac7fea7d71c08e4b11/AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dfc4f809e99e4d4da5053d560688e40/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/5f7eb6965b3ac88d5554060fe17286b9/AndroidManifest.xml:17:1-22:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+	package
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:2:5-39
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.BLUETOOH
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.BLUETOOH_ADMIN
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:5:5-73
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:5:22-70
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:6:5-87
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:14:5-88
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:14:5-88
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:6:29-85
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:7:5-85
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:7:29-83
+uses-permission#android.permission.INTERNET
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:8:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:9:5-77
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:9:22-75
+uses-feature#android.hardware.bluetooth_le
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:11:5-89
+	android:required
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:11:64-87
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:11:19-63
+application
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:13:5-30:19
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:13:5-20
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:16:5-53
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:16:5-53
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/3111cf687597118f4675fb313f4eaf65/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/3111cf687597118f4675fb313f4eaf65/AndroidManifest.xml:11:5-20
+MERGED from [org.webkit:android-jsc:r174650] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/a346ce87ecfad71a5846e1eb70c8655b/AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/a346ce87ecfad71a5846e1eb70c8655b/AndroidManifest.xml:2:3-17
+	android:label
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:15:7-39
+	android:icon
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:16:7-41
+	android:allowBackup
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:17:7-34
+	android:theme
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:18:7-38
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:14:7-38
+activity#com.reactnativebluetooth.MainActivity
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:19:7-28:18
+	android:label
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:21:9-41
+	android:windowSoftInputMode
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:23:9-51
+	android:configChanges
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:22:9-79
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:20:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:24:9-27:25
+action#android.intent.action.MAIN
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:25:13-65
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:25:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:26:13-73
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:26:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:29:7-84
+	android:name
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:29:17-81
+uses-sdk
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.4] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/react-native-0.57.4.aar/80b88fe0360e57d0e63a9104587161a9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5020b97a74c7adee8c0e157e5746860e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5020b97a74c7adee8c0e157e5746860e/AndroidManifest.xml:20:5-44
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5e91adbfec1bf6f559cc421cc4772808/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5e91adbfec1bf6f559cc421cc4772808/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/f8483f664f4dc22d5a056ba104efebb1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/f8483f664f4dc22d5a056ba104efebb1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c248018a0a33ed41cc24fc8a3b5a1d30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/c248018a0a33ed41cc24fc8a3b5a1d30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/17cd853d51843345b3292796306e1bd6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/17cd853d51843345b3292796306e1bd6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0db813aeb8599a4125347a7bc87b0877/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0db813aeb8599a4125347a7bc87b0877/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b763f6274abd9002ebf6f6e7108345ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b763f6274abd9002ebf6f6e7108345ad/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/09561ffa821b0e5feab1243fa812af4b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/09561ffa821b0e5feab1243fa812af4b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2034abf50f292235827d68d6ee08c608/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2034abf50f292235827d68d6ee08c608/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/bcc7a421e0280fa8b0024299e6796572/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/bcc7a421e0280fa8b0024299e6796572/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/0f68b34f89b7fe9fff6b7b604b892348/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/0f68b34f89b7fe9fff6b7b604b892348/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/30e5c0ba45cda5a48815bedc9ca08bc4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/30e5c0ba45cda5a48815bedc9ca08bc4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/3111cf687597118f4675fb313f4eaf65/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/soloader-0.5.1.aar/3111cf687597118f4675fb313f4eaf65/AndroidManifest.xml:7:5-9:41
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.3.0.aar/eb652b30616d9026817d73ec73d310c7/AndroidManifest.xml:8:5-43
+MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/proguard-rules-1.3.3.0.aar/eb652b30616d9026817d73ec73d310c7/AndroidManifest.xml:8:5-43
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f11d78d07107473c1c37a12540a87df4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f11d78d07107473c1c37a12540a87df4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/0eaf32347bc0980b3cd74d75b9e0e517/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/0eaf32347bc0980b3cd74d75b9e0e517/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/c0a8cc9f769282ac7fea7d71c08e4b11/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/c0a8cc9f769282ac7fea7d71c08e4b11/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dfc4f809e99e4d4da5053d560688e40/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3dfc4f809e99e4d4da5053d560688e40/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/5f7eb6965b3ac88d5554060fe17286b9/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/5f7eb6965b3ac88d5554060fe17286b9/AndroidManifest.xml:20:5-44
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH
+ADDED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:5-68
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:11:5-68
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:5-74
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:12:5-74
+MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.0] /Users/petergoes/.gradle/caches/transforms-1/files-1.1/rxandroidble-1.7.0.aar/a2998c4a490e11ba69732f195c7276c0/AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from [:react-native-ble-plx] /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/node_modules/react-native-ble-plx/android/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:12:22-71
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Volumes/Voorhoede/www/_experiments/ReactNativeBluetooth/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
