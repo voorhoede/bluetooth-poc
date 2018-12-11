@@ -50,7 +50,6 @@ const app = {
 		evothings.ble.stopScan()
 	},
 	connect: function (device) {
-		console.log(device)
 		const deviceId = device.address
 		const onConnect = function () {
 			ble.startNotification(deviceId, battery.service, battery.level, app.onBatteryLevelChange, app.onError);
@@ -66,8 +65,6 @@ const app = {
 			alert(`Connected to ${device.name.trim()}! \nThere are ${device.services.length} services available.`)
 
 			let service = evothings.ble.getService(device, device.services[4].uuid)
-			console.log('service', service)
-			console.log('characteristics', service.characteristics)
 			let characteristic = evothings.ble.getCharacteristic(service, service.characteristics[1].uuid)
 
 			evothings.ble.readCharacteristic(
