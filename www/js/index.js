@@ -56,17 +56,14 @@ const app = {
 		}
 	},
 	onBatteryLevelChange: function (data) {
-		console.log('onBatteryLevelChange', data);
 		const batteryLevel = new Uint8Array(data);
 		batteryState.innerHTML = batteryLevel[0];
 	},
 	readBatteryState: function (event) {
-		console.log('readBatteryState');
 		const deviceId = event.target.dataset.deviceId;
 		ble.read(deviceId, battery.service, battery.level, app.onReadBatteryLevel, app.onError);
 	},
 	onReadBatteryLevel: function (data) {
-		console.log('onReadBatteryLevel', data);
 		const batteryLevel = new Uint8Array(data);
 		batteryState.innerHTML = batteryLevel[0];
 	},
